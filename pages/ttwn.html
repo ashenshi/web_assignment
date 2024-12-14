@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Then There Were None - Portfolio</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="../assets/logo.svg" alt="Logo" class="logo">
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">HOME</a>
+                <a href="game.html" class="nav-link">GAME</a>
+                <a href="ux.html" class="nav-link">UX</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </nav>
+            <div class="social-icons">
+                <img src="../assets/twitter.svg" alt="Twitter" class="social-icon">
+                <img src="../assets/instagram.svg" alt="Instagram" class="social-icon">
+                <img src="../assets/linkedin.svg" alt="LinkedIn" class="social-icon">
+            </div>
+        </header>
+
+        <main class="project-detail">
+            <div class="gallery-container">
+                <button class="nav-arrow prev-arrow">&lt;</button>
+                <div class="gallery-images">
+                    <img src="../assets/ttwn-1.png" alt="TTWN Design Document 1" class="gallery-image active">
+                    <img src="../assets/ttwn-2.png" alt="TTWN Design Document 2" class="gallery-image">
+                </div>
+                <button class="nav-arrow next-arrow">&gt;</button>
+            </div>
+
+            <section class="project-content">
+                <h2 class="section-title">Game Concept</h2>
+                <p>This is a story about the awakening of ordinary people in a dystopian society.</p>
+                <p>Ming was informed one day that his sister, Molly, had been killed in an accident. He couldn't believe the news and inquired as to what happened, but he received no response. And all of his friends appear to have forgotten who Molly is over the night. It frightens Ming, so he decides to find out the truth for himself.</p>
+                <p>During his search, he discovered that Molly was not dead or missing, but had been abducted by an unknown power. On top of that, he discovered that he may not have known his sister as well as he thought.</p>
+                <p>And doing anything in secret is difficult when you live under 24/7 surveillance, so should Ming continue or just give up?</p>
+                <p>Will he be able to save Molly and other "disappeared" people like her?</p>
+            </section>
+
+            <section class="project-content">
+                <h2 class="section-title">My Role</h2>
+                <p>Game design, story, script.</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.gallery-image');
+        const prevBtn = document.querySelector('.prev-arrow');
+        const nextBtn = document.querySelector('.next-arrow');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream A Little Dream of Me - Portfolio</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="../assets/logo.svg" alt="Logo" class="logo">
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">HOME</a>
+                <a href="game.html" class="nav-link">GAME</a>
+                <a href="ux.html" class="nav-link">UX</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </nav>
+            <div class="social-icons">
+                <a href="https://twitter.com" target="_blank" class="social-link">
+                    <img src="../assets/twitter.svg" alt="Twitter" class="social-icon">
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-link">
+                    <img src="../assets/instagram.svg" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="social-link">
+                    <img src="../assets/linkedin.svg" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+        </header>
+
+        <main class="project-detail">
+            <div class="gallery-container">
+                <button class="nav-arrow prev-arrow">&lt;</button>
+                <div class="gallery-images">
+                    <img src="../assets/dream.png" alt="Game screenshot 1" class="gallery-image active">
+                    <img src="../assets/dream-1.png" alt="Game screenshot 1" class="gallery-image">
+                    <img src="../assets/dream-2.png" alt="Game screenshot 2" class="gallery-image">
+                    <img src="../assets/dream-3.png" alt="Game screenshot 3" class="gallery-image">
+                    <img src="../assets/dream-4.png" alt="Game screenshot 4" class="gallery-image">
+                </div>
+                <button class="nav-arrow next-arrow">&gt;</button>
+            </div>
+
+            <div class="demo-status">
+                <a href="https://seisumi.itch.io/dream-a-little-dream-of-me" class="demo-link">demo available on itch.io</a>
+            </div>
+
+            <section class="project-content">
+                <h2 class="section-title">Game Concept</h2>
+                <p>This is a story about dreams and self-discovery.</p>
+                <p>Have you ever wondered where our dreams come from when we dream? Is it all in our heads, or is it something that happened somewhere far away, in the past, or maybe in the future? Could there be a realm of dreams that does not interfere with our perception of reality?</p>
+                <p>The balance between reality and dreams is disrupted as Ellie awakens in the Dream realm. Of course, she can't stay in the Dream, but in order to return to the Waking world, she must restore the balance. In the process, she learns the truth about the Dream world, as well as a hidden fact about her own existence.</p>
+                <p>Can she make the right decision to restore the balance of two worlds?</p>
+            </section>
+
+            <section class="project-content">
+                <h2 class="section-title">My Role</h2>
+                <p>Game design, script, art, and coding.</p>
+                <p>Cover and Logo design were gifts from a dear friend, other parts were all done by myself.</p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.gallery-image');
+        const prevBtn = document.querySelector('.prev-arrow');
+        const nextBtn = document.querySelector('.next-arrow');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+    </script>
+</body>
+</html>
